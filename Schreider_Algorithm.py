@@ -1,3 +1,18 @@
+# Schreider_Algorithm.py                   C. Carrizales-Velazquez 24 Jun 2025
+#
+#
+#-------------------------------------------------------------------------------------------
+# Schreider_Algorithm: It calculates the Original and Modified Schreider Algorithm of a Seismic Region as presented in our publication: 
+#                                                                     "On possible significant quiescence patterns in the Mexican subduction Cocos plate region"
+#
+# This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY
+#
+#-------------------------------------------------------------------------------------------
+
+# Usage since Linux Terminal:
+#
+#  $ python3 Schreider_Algorithm.py
+
 from datetime import datetime as dt
 import matplotlib.pyplot as plt
 from haversine import haversine
