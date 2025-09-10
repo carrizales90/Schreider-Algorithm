@@ -79,12 +79,13 @@ for n in range(1000):
 '''
 Convolutions are computed (see section of Methods of the publication)
 '''
-Plot_Time=[]; T=[]; R=[]
+Plot_Time=[]; previous_T=[]; previous_R=[]
 for i in range(len(Time)-1):
     delta_t = DDTT.timedelta.total_seconds(Time[i+1]-Time[i])
     if delta_t > 0:
-        Plot_Time.append(Time[i+1]); T.append(delta_t); R.append(distance(Depth[i+1], Lon[i+1], Lat[i+1] , Depth[i], Lon[i], Lat[i]))
-V = np.log10(np.divide(R,T)); RT = np.multiply( np.divide(R, np.std(R)) , np.divide(T, np.std(T)) )
+        Plot_Time.append(Time[i+1]); previous_T.append(delta_t); previous_R.append(distance(Depth[i+1], Lon[i+1], Lat[i+1] , Depth[i], Lon[i], Lat[i]))
+T = np.divide(previous_T, np.std(previous_T)); R = np.divide(previous_R, np.std(previous_R))
+V = np.log10(np.divide(R,T)); RT = np.multiply(R ,T)
 T_prima = T; T2_prima=V; T3_prima = RT; N = len(T); Tk = []; Tk2 = []; Tk3 = []
 
 for i in range(N):
